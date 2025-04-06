@@ -1,24 +1,51 @@
 import { useState } from 'react'
-import './App.css'
 
-function Section() {
-  const [title, setTitle] = useState("");
+function Section({ edit }) {
+  const [title, setTitle] = useState("")
 
 
-  return (
-    <div>
-      <h1>{title}</h1>
-      <h2>Section Items</h2>
-    </div>
-  )
+  if (edit === false) {
+    return (
+      <div>
+        <h2>{title === "" ? "(No Title)" : title}</h2>
+        <ul>
+          <li>Section Items</li>
+        </ul>
+      </div>
+    )
+  } else {
+    return (
+      <div>
+        <label for="title">Title:</label>
+        < input
+          id="title"
+          type='text'
+          value={title}
+          onChange={(event) => setTitle(event.target.value)}
+        />
+      </div>
+    )
+  }
 }
 
 
 function App() {
+  const [edit, setEdit] = useState(true)
+
+  const changeMode = () => {
+    if (edit === true) {
+      setEdit(false);
+    } else {
+      setEdit(true);
+    }
+  }
+
 
   return (
     <>
-      <Section />
+      <button onClick={changeMode} >{edit ? "View" : "Edit"}</button>
+      <Section edit={edit} />
+      <Section edit={edit} />
     </>
   )
 }
