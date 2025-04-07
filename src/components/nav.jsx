@@ -7,3 +7,5 @@ function Nav({ changeMode }) {
         </div>
     )
 }
+
+export default Nav; 
