@@ -15,13 +15,14 @@ function Section({ edit }) {
     } else {
         return (
             <div>
-                <label for="title">Title:</label>
-                < input
-                    id="title"
-                    type='text'
-                    value={title}
-                    onChange={(event) => setTitle(event.target.value)}
-                />
+                <label>Title:
+                    < input
+                        id="title"
+                        type='text'
+                        value={title}
+                        onChange={(event) => setTitle(event.target.value)}
+                    />
+                </label>
             </div>
         )
     }

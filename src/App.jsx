@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-      <Nav />
+      <Nav changeMode={changeMode} edit={edit} />
       <Section edit={edit} />
       <Section edit={edit} />
     </>
