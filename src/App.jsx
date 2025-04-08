@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import Section from './components/section';
 import Nav from "./components/nav.jsx";
+import Title from './components/title.jsx';
 
 function App() {
   const [edit, setEdit] = useState(true)
@@ -18,7 +19,7 @@ function App() {
   return (
     <>
       <Nav changeMode={changeMode} edit={edit} />
-      <Section edit={edit} />
+      <Title edit={edit} />
       <Section edit={edit} />
     </>
   )
